@@ -85,3 +85,5 @@ jooq {
         }
     }
 }
+
+tasks.named("generateJooq").get().shouldRunAfter(tasks.named("flywayMigrate").get())
