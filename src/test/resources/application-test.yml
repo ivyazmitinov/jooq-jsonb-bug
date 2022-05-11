@@ -1,0 +1,19 @@
+micronaut:
+  application:
+    name: jooqJsonbBug
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:${database.server.port:5432}/postgres
+    username: postgres
+    password: "postgres"
+jooq:
+  datasources:
+    default:
+      sql-dialect: 'POSTGRES'
+flyway:
+  datasources:
+    default:
+netty:
+  default:
+    allocator:
+      max-order: 3

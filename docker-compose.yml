@@ -1,0 +1,17 @@
+#  docker-compose для локальной разработки
+version: "2.4"
+networks:
+  kafka:
+    driver: bridge
+services:
+  postgres:
+    image: postgres:14.1
+    ports: [ "${MASTER_EXTERNAL_PORT:-5432}:5432" ]
+    environment:
+      POSTGRES_USER: "${POSTGRES_USER:-postgres}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      PGUSER: "${POSTGRES_USER:-postgres}"
+      PGPASSWORD: "${POSTGRES_PASSWORD}"
+      POSTGRES_HOST_AUTH_METHOD: "${POSTGRES_HOST_AUTH_METHOD:-trust}"
+volumes:
+  healthcheck-volume:

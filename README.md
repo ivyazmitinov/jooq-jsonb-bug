@@ -1,0 +1,1 @@
+To reproduce run `com.example.JooqJsonbBugTest.testJsonbBug`
