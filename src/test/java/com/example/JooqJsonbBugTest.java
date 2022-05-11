@@ -52,11 +52,6 @@ class JooqJsonbBugTest {
                     .set(METAINFO_CACHE.CACHE_PART_NAME, "test")
                     .set(METAINFO_CACHE.VALUE, value)
                     .set(METAINFO_CACHE.TENANT_ID, "t")
-                    .onConflict(METAINFO_CACHE.CACHE_PART_NAME, METAINFO_CACHE.TENANT_ID)
-                    .doUpdate()
-                    .set(METAINFO_CACHE.VALUE, value)
-                    .where(METAINFO_CACHE.CACHE_PART_NAME.eq("test")
-                        .and(METAINFO_CACHE.TENANT_ID.eq("t")))
                     .execute();
 
             }
